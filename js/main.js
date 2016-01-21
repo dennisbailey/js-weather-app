@@ -5,20 +5,15 @@ $(document).ready(function(){
     "url": "http://jsonip.com/",
     "method": "GET"
   }
-  
-  var locationRequest = {
-    "url": "http://freegeoip.net/json/128.177.172.220",
-    "method": "GET"
-  } 
-  
-  var ipAddress = '';
-  var latitude = '';
-  var longitude = '';
-
     
   $.ajax(ipRequest).done(function(ipResponse) {
     console.log(ipResponse);
     var ipAddress = ipResponse.ip;
+    
+    var locationRequest = {
+    "url": "http://freegeoip.net/json/" + ipAddress,
+    "method": "GET"
+    } 
     
       $.ajax(locationRequest).done(function(locationResponse) {
       console.log(locationResponse);
