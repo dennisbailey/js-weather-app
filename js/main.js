@@ -21,7 +21,7 @@ $(document).ready(function(){
       var longitude = locationResponse.longitude;
       
       var forecast = {
-        "url": "https://api.forecast.io/forecast/1f20d4933aaab481a0b34eb3559b6d50/39.7713,-105.0499",
+        "url": "https://api.forecast.io/forecast/1f20d4933aaab481a0b34eb3559b6d50/"+latitude+","+longitude,
         "method": "GET",
         "dataType": "jsonp"
       }
